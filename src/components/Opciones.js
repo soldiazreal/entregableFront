@@ -13,6 +13,10 @@ export default class Opciones extends React.Component{
                     <button id= 'B' className="botones" onClick={this.props.handleClick}>B</button>
                     <h2 className="opciones">{this.props.opcionB}</h2>
                 </div>   
+                <div className="opcion">
+                    <button id='volver' className= "botones" onClick={this.props.handleClick}>←</button>
+                    <h2 className= "opciones">Volver a empezar</h2>
+                </div>
             </div>
         );
     }

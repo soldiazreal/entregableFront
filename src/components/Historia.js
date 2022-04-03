@@ -2,6 +2,7 @@ import React from "react";
 import Opciones from "./Opciones";
 import Data from "./data.json";
 import Historial from "./Historial";
+import Swal from 'sweetalert2'
 
 export default class Historia extends React.Component {
   constructor() {
@@ -20,7 +21,7 @@ export default class Historia extends React.Component {
   handleClick = (e) => {
     const id = e.target.id;
     if (this.state.contador >= 7) {
-      alert("Fin.");
+      Swal.fire('Fin de la historia');
     } else if (id === "A" && this.state.seleccionPrevia === "A") {
       this.setState({
         contador: this.state.contador + 1,
@@ -41,6 +42,12 @@ export default class Historia extends React.Component {
         contador: this.state.contador + 2,
         seleccionPrevia: "B",
       });
+    } else if(id === "volver"){
+      this.setState({
+        contador: 0,
+        seleccionPrevia: "",
+        historial: [],
+      })
     }
   };
   render() {
