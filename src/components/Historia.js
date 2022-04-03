@@ -42,12 +42,6 @@ export default class Historia extends React.Component {
         contador: this.state.contador + 2,
         seleccionPrevia: "B",
       });
-    } else if(id === "volver"){
-      this.setState({
-        contador: 0,
-        seleccionPrevia: "",
-        historial: [],
-      })
     }
   };
   render() {
